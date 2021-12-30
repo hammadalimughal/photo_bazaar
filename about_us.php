@@ -21,7 +21,7 @@ $page = 'home';
         color: #fff;
     }
     </style>
-    <section class="home_banner_sec">
+    <!-- <section class="home_banner_sec">
         <div class="home_banner_img" id="banner_home">
             <div class="slider_item item_1">
                 <figure>
@@ -58,36 +58,41 @@ $page = 'home';
                     <img class="img-fluid" src="images/home_banner_4.png" alt="">
                 </figure>
                 <div class="home_banner_content">
-                <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
-                    <h2>Find The Perfect <br> Images <span>For Your Next <br> Creative Project.</span></h2>
-</div>
+                    <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+                        <h2>Find The Perfect <br> Images <span>For Your Next <br> Creative Project.</span></h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-12">
                     <div class="about_us_start">
-                        <h2 data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="800">About <span>US</span></h2>
+                        <h2 data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="800">About <span>US</span>
+                        </h2>
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
-                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
-                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
@@ -102,25 +107,30 @@ $page = 'home';
                         </div>
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <p data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
-                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
-                                    <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
-                                    <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is simply dummy text of the printing and typesetting industry. Lorem
+                                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">Placeholder is
+                                    simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s Placeholder
                                     is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                     the industry's standard dummy text ever since the 1500s.</p>
@@ -164,12 +174,14 @@ $page = 'home';
                 <div class="col-lg-11 col-12">
                     <div class="testimonials">
                         <div data-aos="fade-down" data-aos-delay="100" data-aos-duration="800">
-                        <h2>Our <span>Testimonials</span></h2>
-                        <p class="sub_content">Placeholder is simply dummy text of the printing and typesetting industry
-                            Placeholder is
-                            simply dummy text.</p>
-                            </div>
-                        <div class="test_slider mt-5" id="testimonial_slider" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="800">
+                            <h2>Our <span>Testimonials</span></h2>
+                            <p class="sub_content">Placeholder is simply dummy text of the printing and typesetting
+                                industry
+                                Placeholder is
+                                simply dummy text.</p>
+                        </div>
+                        <div class="test_slider mt-5" id="testimonial_slider" data-aos="zoom-in-down"
+                            data-aos-delay="100" data-aos-duration="800">
                             <div class="slider_slide">
                                 <span class="quotes"><i class="fas fa-quote-right"></i></span>
                                 <div class="slide_content">

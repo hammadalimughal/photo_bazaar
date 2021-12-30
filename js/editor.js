@@ -1,4 +1,7 @@
 var activeObjectId;
+var tui_library = true;
+var glfx_library = false;
+var undo_interval;
 var imageEditor;
 var imageInCanvas;
 var activeFrameId = null;
@@ -33,9 +36,76 @@ function readURL(input) {
 $("#import_img").change(function () {
     readURL(this);
 });
+
+function filter_images_templates(val_) {
+    if (val_ != 'allImages' && val_ != 'allOrientation') {
+
+        $(".templates_img").css('display', 'none')
+        $('.templates_img').map(function () {
+            var incStr = $(this).attr('data-template').includes(val_);
+            if (incStr) {
+                $(this).css('display', 'block')
+            }
+        });
+    }
+    else {
+        $(".templates_img").css('display', 'block');
+    }
+    // tempSize();
+}
+$('#temp_size_').click(function () {
+    if ($(this).prop('checked')) {
+        $(".temp_size_content").slideDown();
+    }
+    else {
+        $(".temp_size_content").slideUp();
+    }
+})
+function tempSize() {
+    var temp_width, temp_height;
+    let unit = $('.search_size_uni select').val()
+    if (unit == "px") {
+        temp_width = $("#img_temp_width").val();
+        temp_height = $("#img_temp_height").val();
+    }
+    else {
+        temp_width = $("#img_temp_width").val() * 96;
+        temp_height = $("#img_temp_height").val() * 96;
+    }
+
+    if ($('#temp_size_').prop('checked')) {
+        debugger
+        // filter_images_templates($('#temp_cate'))
+        // let tempImgs = $(".templates_img");
+        $(".templates_img").map((index, elem) => {
+            debugger
+            // for width 
+
+            if ($(elem).children()[0].naturalWidth < parseFloat(temp_width)) {
+                debugger
+                $(elem).css('display', 'none');
+            }
+            else if (!($(elem).children()[0].naturalHeight < parseFloat(temp_height))) {
+                debugger
+                $(elem).css('display', 'block');
+            }
+            // for height 
+            if ($(elem).children()[0].naturalHeight < parseFloat(temp_height)) {
+                $(elem).css('display', 'none');
+            }
+            else if (!($(elem).children()[0].naturalWidth < parseFloat(temp_width))) {
+                $(elem).css('display', 'block');
+            }
+        })
+    }
+}
+
+
+
 // Image editor
 function generateCanvas() {
-    if(imageEditor === undefined){
+    debugger
+    if (imageEditor === undefined) {
         imageEditor = new tui.ImageEditor('.tui-image-editor', {
             cssMaxWidth: 700,
             cssMaxHeight: 500,
@@ -46,11 +116,12 @@ function generateCanvas() {
         });
         imageEditor.on({
             objectAdded: function (obj) {
-    
+                activeObjectId = obj.id;
+                imageEditor.stopDrawingMode()
                 console.info(obj);
             },
             objectActivated: function (obj) {
-                activeObjectId = obj.id;
+                imageEditor.stopDrawingMode()
                 if (obj.type === 'rect' || obj.type === 'circle' || obj.type === 'triangle') {
                     showSubMenu('shape');
                     setShapeToolbar(obj);
@@ -64,12 +135,35 @@ function generateCanvas() {
                     setTextToolbar(obj);
                     activateTextMode();
                 }
+                if(obj){
+                    activeObjectId = obj.id;
+                }
+                else{
+                    activeObjectId = objectProps.id;
+                }
             },
-            addText: function (obj) {
-                console.log(obj)
-            },
-        });
-        setInterval(() => {
+
+            // addText: function (obj) {
+            //     console.log(obj)
+            //     insert_text()
+            // },
+
+            addText: function (pos,obj) {
+                debugger
+                imageEditor
+                    .addText('Double Click', {
+                        position: pos.originPosition,
+                    })
+                    .then(function (objectProps) {
+                        console.log(objectProps);
+                        activeObjectId = objectProps.id;
+                    });
+                imageEditor.stopDrawingMode()
+            }
+        });        
+        tui_library = true;
+        glfx_library = false;
+        undo_interval = setInterval(() => {
             if (imageEditor.isEmptyUndoStack() == false) {
                 $(".undo").removeAttr("disabled");
             }
@@ -82,7 +176,7 @@ function generateCanvas() {
             if (imageEditor.isEmptyRedoStack() == true) {
                 $(".redo").attr("disabled", true);
             }
-        }, 100);
+        }, 300);
         setInterval(() => {
             if (activeObjectId == activeFrameId && activeFrameId != null) {
                 imageEditor.discardSelection();
@@ -122,6 +216,37 @@ function base64ToBlob(data) {
     return new Blob([uInt8Array], { type: mimeString });
 }
 
+function resizepredefine(_value) {
+    switch (_value) {
+        case "fb_post":
+            $("#resize_width").val(628)
+            $("#resize_height").val(1200)
+            break;
+        case "fb_banner":
+            $("#resize_width").val(628)
+            $("#resize_height").val(820)
+            break;
+        case "ins_post":
+            $("#resize_width").val(1080)
+            $("#resize_height").val(1080)
+            break;
+        case "web_banner":
+            $("#resize_width").val(1024)
+            $("#resize_height").val(768)
+            break;
+        case "web_fluid":
+            $("#resize_width").val(1920)
+            $("#resize_height").val(768)
+            break;
+        default:
+            break;
+    }
+    $(".resize_unit select").val('px').change();
+    if ($("#resize_check").prop("checked")) {
+        $("#resize_check").prop("checked", false)
+    }
+}
+
 
 function resizeEditor() {
     var $editor = $('.tui-image-editor');
@@ -146,15 +271,40 @@ $("#resize_height").keyup(function () {
         $("#resize_width").val(newWidth);
     }
 });
+function activateShapeMode() {
+    if (imageEditor.getDrawingMode() !== 'SHAPE') {
+        imageEditor.stopDrawingMode();
+        imageEditor.startDrawingMode('SHAPE');
+    }
+}
+function shapeModeOn() {
+    shapeOptions.stroke = '#000000';
+    shapeOptions.fill = '#ffffff';
+    shapeOptions.strokeWidth = Number();
+
+    // step 2. set options to draw shape
+    imageEditor.setDrawingShape(shapeType, shapeOptions);
+
+    // step 3. start drawing shape mode
+    activateShapeMode();
+}
 
 function resizeDimension() {
+    debugger
     var canvas = document.createElement('canvas');
     ctx_ = canvas.getContext('2d');
-    canvas.width = $("#resize_width").val();
-    canvas.height = $("#resize_height").val();
+    let unit = $(".resize_unit select").val()
+    if (unit == "px") {
+        canvas.width = $("#resize_width").val();
+        canvas.height = $("#resize_height").val();
+    }
+    else {
+        canvas.width = $("#resize_width").val() * 96;
+        canvas.height = $("#resize_height").val() * 96;
+    }
     ctx_.drawImage(imageInCanvas, 0, 0, canvas.width, canvas.height);
     var imageSrc = canvas.toDataURL("image/png");
-    imageEditor.loadImageFromURL(imageSrc, "Output");
+    imageEditor.loadImageFromURL(imageSrc, 'image');
 }
 
 // change canvas image 
@@ -164,7 +314,6 @@ function imageforEdit(image) {
     $(image).removeClass("img-fluid")
     imageInCanvas.src = image.src;
     imageEditor.loadImageFromURL(image.src, "Output");
-    // $(".btn_history").removeAttr("disabled");
     imageEditor.clearUndoStack();
     $("#height").html(image.height);
     $("#width").html(image.width);
@@ -172,22 +321,45 @@ function imageforEdit(image) {
     $("#resize_width").val(image.width);
     $(image).addClass("img-fluid");
 };
-function uploadImgToCanvas(){
-    
-}
-$("#canvas_upload").change(function(e){
+$("#canvas_upload").change(function (e) {
+    debugger
     generateCanvas();
     readURL(this);
-    file = e.target.files[0];
-    imageEditor.loadImageFromFile(file)
-})
+    var reader = new FileReader();
+    imageInCanvas = new Image()
+    // file = e.target.files[0];
+    // imageEditor.loadImageFromFile(file)
+    imageInCanvas = new Image()
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (event) {
+            $(imageInCanvas).attr('src', event.target.result)
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    }
+    setTimeout(() => {
+        imageEditor.loadImageFromURL(imageInCanvas.src, 'output')
+        // console.log(imageInCanvas);
+        $("#height").html(imageInCanvas.height);
+        $("#width").html(imageInCanvas.width);
+        $("#resize_height").val(imageInCanvas.height);
+        $("#resize_width").val(imageInCanvas.width);
+    }, 200);
+})
+$('.resize_unit select').change(function () {
+    $(".resize_unit select").val($(this).val()).change();
+    document.getElementById("resize_preset").selectedIndex = 0
+})
 function export_img() {
+    debugger
     var imageName = imageEditor.getImageName();
     var dataURL = imageEditor.toDataURL();
     var blob, type, w;
 
     if (supportingFileAPI) {
+        debugger
         blob = base64ToBlob(dataURL);
         type = blob.type.split('/')[1];
         if (imageName.split('.').pop() !== type) {
@@ -197,36 +369,55 @@ function export_img() {
         // Library: FileSaver - saveAs
         saveAs(blob, imageName); // eslint-disable-line
     } else {
+        debugger
         alert('This browser needs a file-server');
         w = window.open();
         w.document.body.innerHTML = '<img src="' + dataURL + '">';
     }
 }
 
-$("#brightness").change(function () {
-    imageEditor.applyFilter("brightness", {
-        brightness: parseInt(this.value, 10) / 255,
-    }).then(function (result) {
-        console.log(result);
-    });
-});
+// ("#exposure").change(function () {
+//     let valu = $(this).val()
+//     if (valu >= 0) {
+//         imageEditor.applyFilter('blendColor', {
+//             mode: 'tint',
+//             color: '#ffffff',
+//             alpha: valu,
+//         });
+//     }
+//     else {
+//         imageEditor.applyFilter('blendColor', {
+//             mode: 'tint',
+//             color: '#000000',
+//             alpha: Math.abs(valu),
+//         });
+//     }
+// });
 
-$("#Contrast").change(function () {
-    imageEditor.applyFilter("contrast", {
-        contrast: parseInt(this.value, 10) / 255,
-    }).then(function (result) {
-        console.log(result);
-    });
-});
+// $("#brightness").change(function () {
+//     imageEditor.applyFilter("brightness", {
+//         brightness: parseInt(this.value, 10) / 255,
+//     }).then(function (result) {
+//         console.log(result);
+//     });
+// });
+
+// $("#Contrast").change(function () {
+//     imageEditor.applyFilter("contrast", {
+//         contrast: parseInt(this.value, 10) / 255,
+//     }).then(function (result) {
+//         console.log(result);
+//     });
+// });
 
 
-$("#Saturation").change(function () {
-    imageEditor.applyFilter("saturation", {
-        saturation: parseInt(this.value, 10) / 255,
-    }).then(function (result) {
-        console.log(result);
-    });
-});
+// $("#Saturation").change(function () {
+//     imageEditor.applyFilter("saturation", {
+//         saturation: parseInt(this.value, 10) / 255,
+//     }).then(function (result) {
+//         console.log(result);
+//     });
+// });
 
 
 $("#grayscale").change(function () {
@@ -235,11 +426,11 @@ $("#grayscale").change(function () {
     });
 });
 
-$("#noise").change(function () {
-    imageEditor.applyFilter('noise', {
-        noise: parseInt(this.value),
-    });
-});
+// $("#noise").change(function () {
+//     imageEditor.applyFilter('noise', {
+//         noise: parseInt(this.value),
+//     });
+// });
 
 $("#pixelate").change(function () {
     imageEditor.applyFilter('pixelate', {
@@ -254,6 +445,8 @@ $("#whiteness").change(function () {
         distance: parseInt(this.value, 10) / 255,
     });
 });
+
+$
 
 
 var tintColorpicker = tui.colorPicker.create({
@@ -311,9 +504,17 @@ $("#blur").change(function () {
 
 $("#crop_1").click(function () {
     imageEditor.startDrawingMode('CROPPER');
+    imageEditor.setCropzoneRect()
     $("#apply_crop").removeAttr("disabled");
     $("#cancel_crop").removeAttr("disabled");
 });
+
+function aspectCrop(x, y) {
+    imageEditor.startDrawingMode('CROPPER');
+    imageEditor.setCropzoneRect(x / y)
+    $("#apply_crop").removeAttr("disabled");
+    $("#cancel_crop").removeAttr("disabled");
+};
 
 $("#apply_crop").click(function () {
     imageEditor.crop(imageEditor.getCropzoneRect()).then(function () {
@@ -326,7 +527,8 @@ $("#apply_crop").click(function () {
         $("#resize_height").val(editorSize.height);
         $("#resize_width").val(editorSize.width);
         imageEditor.stopDrawingMode();
-        $("canvas").css('width', 'auto')
+        $('#zoom').val('100');
+        $("canvas").css("width", "100%")
     });
 });
 
@@ -415,16 +617,76 @@ function activateTextMode() {
         imageEditor.startDrawingMode('TEXT');
     }
 }
-var textColorpicker = tui.colorPicker.create({
-    container: $('.text_color')[0],
-    color: '#000000',
-});
+function activateShapeMode() {
+    if (imageEditor.getDrawingMode() !== 'SHAPE') {
+        imageEditor.stopDrawingMode();
+        imageEditor.startDrawingMode('SHAPE');
+    }
+}
+// var textColorpicker = tui.colorPicker.create({
+//     container: $('.text_color')[0],
+//     color: '#000000',
+// });
 
-$(".text_color").click(function () {
+// $(".text_color").click(function () {
+//     imageEditor.changeTextStyle(activeObjectId, {
+//         fill: textColorpicker.getColor(),
+//     });
+// })
+
+function textcolorchange() {
     imageEditor.changeTextStyle(activeObjectId, {
-        fill: textColorpicker.getColor(),
-    });
+        fill: $("#text_color").val(),
 
+    });
+};
+$("#text_color").change(textcolorchange).click(textcolorchange)
+function addText() {
+    imageEditor.addText("Text Here")
+    activateTextMode();
+}
+$('.custom_tool_kit').click(function () {
+    debugger
+    if($(this).attr() == $('#text_tab').attr()){
+        activateTextMode();
+    }
+    else{
+        imageEditor.stopDrawingMode()
+    }
+    
+});
+var shapeOptions = {}
+function shapeMode(mode) {
+    shapeOptions.stroke = $("#shape_stroke_color").val();
+    if ($("#bg_shape_check").prop("checked")) {
+        shapeOptions.fill = $("#shape_bg_color").val();
+    }
+    else {
+        shapeOptions.fill = 'transparent';
+    }
+    shapeOptions.strokeWidth = Number($("#shape_stroke_width").val());
+    switch (mode) {
+        case "square":
+            imageEditor.setDrawingShape('rect', shapeOptions); // circle triangle
+            break;
+        case "circle":
+            imageEditor.setDrawingShape('circle', shapeOptions); // circle triangle
+            break;
+        case "triangle":
+            imageEditor.setDrawingShape('triangle', shapeOptions); // circle triangle
+            break;
+        default:
+            break;
+    }
+    activateShapeMode();
+}
+$(".bg_color__").click(function () {
+    if ($("#bg_shape_check").prop("checked")) {
+        $("#shape_bg_color").css('display', 'block')
+    }
+    else {
+        $("#shape_bg_color").css('display', 'none')
+    }
 })
 function text_styling(param) {
     switch (param) {
@@ -837,3 +1099,9 @@ if (vw < 1200) {
         $(".editor_detail_main").hide();
     })
 }
+
+// tui to glfx 
+var texture
+var canvas
+var prev_html
+

@@ -19,7 +19,7 @@ body {
                 <div class="row">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 panel">
                         <div class="left_section">
-                            <h2>YOUR CONTACT EMAIL</h2>
+                            <!-- <h2>YOUR CONTACT EMAIL</h2>
                             <div class="card log_in_card" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
                                 <div class="row justify-content-between">
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -50,7 +50,7 @@ body {
                                         <div class="col-6"><button class="continue">Continue</button></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="billing_form">
                                 <h2>BILLING Information</h2>
                                 <div class="row" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">

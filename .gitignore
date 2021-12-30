@@ -4,6 +4,7 @@
 /node_modules
 /final_files
 /assets
+/extras
 /.pnp
 .pnp.js
 *.zip

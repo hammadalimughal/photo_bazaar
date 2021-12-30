@@ -50,13 +50,13 @@ const drawImage = (img) => {
     $("#resize_height").val(image.height);
     img.classList.add("img-fluid");
 }
-function updateimg() {
+function updateimg(){
     var img = canvas.toDataURL("image/png");
     var img_export = document.createElement("img");
     img_export.setAttribute("src", img);
     image = img_export
 }
-function export_img() {
+function export_img(){
     updateimg();
     var a = document.createElement('a');
     a.href = image.src;

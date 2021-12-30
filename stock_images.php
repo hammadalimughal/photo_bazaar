@@ -2,7 +2,12 @@
 include 'includes/header.php';
 $page = 'home';
 ?>
-<main>
+<main class="stock_page_main">
+    <style>
+    .top_search_bar {
+        display: none;
+    }
+    </style>
     <section class="home_banner_sec">
         <div class="home_banner_img" id="banner_home">
             <div class="slider_item item_1">
@@ -166,152 +171,212 @@ $page = 'home';
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
-            <div class="filter_sort">
-                <select name="" id="">
-                    <option value="sort" selected>sort</option>
-                    <option value="Ascending">Ascending</option>
-                    <option value="Descending">Descending</option>
-                </select><br>
-                <select name="" id="">
-                    <option value="sort" selected>Category</option>
-                    <option value="Artist">Artist</option>
-                    <option value="Videographer">Videographer</option>
-                </select>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 p-0 panel">
+                    <div class="left_bar px-4 h-100">
+                        <div class="stock_filters">
+                            <h4>Search <span>Filter</span></h4>
+                            <div class="stock_filter_item">
+                                <a class="collapse_anc" data-bs-toggle="collapse" href="#collapseType" role="button"
+                                    aria-expanded="false" aria-controls="collapseType">
+                                    Image Type<i class="fas fa-chevron-right"></i>
+                                </a>
+                                <div class="collapse ps-3 pe-1 show" id="collapseType">
+                                    <div class="row my-3">
+                                        <div class="col-6 p-1"><button class="filter_btn active">All Photos</button>
+                                        </div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Photos</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Illustration</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Victors</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stock_filter_item">
+                                <a class="collapse_anc" data-bs-toggle="collapse" href="#collapseOrientation"
+                                    role="button" aria-expanded="false" aria-controls="collapseOrientation">
+                                    Image Orientation<i class="fas fa-chevron-right"></i>
+                                </a>
+                                <div class="collapse ps-3 pe-1 show" id="collapseOrientation">
+                                    <div class="row my-3">
+                                        <div class="col-6 p-1"><button class="filter_btn active">All
+                                                Orientation</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Horizontal</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Vertical</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Square</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Panaromic</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stock_filter_item">
+                                <a class="collapse_anc" data-bs-toggle="collapse" href="#collapsePeople" role="button"
+                                    aria-expanded="false" aria-controls="collapsePeople">
+                                    People<i class="fas fa-chevron-right"></i>
+                                </a>
+                                <div class="collapse ps-3 pe-1 show" id="collapsePeople">
+                                    <div class="row my-3">
+                                        <div class="col-6 p-1"><button class="filter_btn active">None</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Include People</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Exclude People</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stock_filter_item">
+                                <a class="collapse_anc" data-bs-toggle="collapse" href="#collapseCategory" role="button"
+                                    aria-expanded="false" aria-controls="collapseCategory">
+                                    Categorized<i class="fas fa-chevron-right"></i>
+                                </a>
+                                <div class="collapse ps-3 pe-1 show" id="collapseCategory">
+                                    <div class="row my-3">
+                                        <div class="col-6 p-1"><button class="filter_btn active">None</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Nature</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Macro</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Aerial</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Abstract</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Architectural</button></div>
+                                        <div class="col-6 p-1"><button class="filter_btn">Editorial</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 p-0 panel">
+                    <section class="stock_images">
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_lft_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_7.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_7.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_1.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_rgt_1.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_cntr_rgt_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_1.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_cntr_lft_1.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_1.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_rgt_1.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_lft_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fine_art_item">
+                            <div class="fine-img-m">
+                                <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
+
+                                <div class="hvr_content">
+                                    <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
+                                            class="fas fa-search-plus"></i></a>
+                                    <h5>Fashion</h5>
+                                    <h6>View Collection</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
-            <section class="stock_images">
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_lft_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_7.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_7.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_1.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_rgt_1.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_cntr_rgt_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_1.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_cntr_lft_1.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_rgt_1.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_rgt_1.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_lft_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="fine_art_item">
-                    <div class="fine-img-m">
-                        <img class="img-fluid fine-thumb" src="images/art_gallery_cntr_lft_2.png" alt="">
-
-                        <div class="hvr_content">
-                            <a data-fancybox data-type="image" href="images/art_gallery_lft_2.png"><i
-                                    class="fas fa-search-plus"></i></a>
-                            <h5>Fashion</h5>
-                            <h6>View Collection</h6>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
         </div>
         <section>
             <div class="premium_online">

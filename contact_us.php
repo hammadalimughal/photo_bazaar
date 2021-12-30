@@ -11,9 +11,10 @@ body {
 .home_banner_sec .home_banner_content h3 {
     font-size: 50px;
 }
+
 </style>
 <main class='Contactus_page'>
-    <section class="home_banner_sec">
+    <!-- <section class="home_banner_sec">
         <div class="home_banner_img" id="banner_home">
             <div class="slider_item item_1">
                 <figure>
@@ -50,12 +51,12 @@ body {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-11 col-sm-12 col-12">
-                    <div class="contact_form"data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="800">
+                    <div class="contact_form" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="800">
                         <h2>Contact <span>US</span></h2>
                         <p>Placeholder is simply dummy text of the printing and typesetting industry Placeholder is
                             simply dummy text.</p>

@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
-    <link type="text/css" href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css" rel="stylesheet" />
+    <link type="text/css" href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="icon" href="images/fav-icon.png" type="image/png" sizes="">
-    <link type="text/css" href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css" rel="stylesheet" />
+    <link type="text/css" href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css"
+        rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
@@ -42,77 +45,78 @@
                                         href="index.php">Home</a>
                                 </li>
                                 <li class="nav-item custom_nav_item dropdown">
-                                    <a class="nav-link custom_nav_link dropdown-toggle" href="#"
-                                        id="art_galleryDropdown" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link custom_nav_link dropdown-toggle" href="digital_library.php">
                                         Digital Library
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="art_galleryDropdown">
+                                    <div class="dropdown-menu">
+                                        <div class="drpdwn_header">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="digital_library.php">Landscape
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Macro
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Aerial
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Abstract
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Architectural
+                                                        Photography</a></li>
+                                            </ul>
 
-                                        <ul>
-                                            <li><a class="dropdown-item" href="digital_library.php">Landscape Photography</a></li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Macro
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Aerial
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Abstract
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Architectural
-                                                    Photography</a></li>
-                                        </ul>
+                                            <ul>
+                                                <li><a class="dropdown-item" href="digital_library.php">Cityscape
+                                                        Photography</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Editorial
+                                                        Photography</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Black and
+                                                        White/Monochrome
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="digital_library.php">Fine Art
+                                                        Photography</a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                        <ul>
-                                            <li><a class="dropdown-item" href="digital_library.php">Cityscape
-                                                    Photography</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Editorial
-                                                    Photography</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Black and
-                                                    White/Monochrome
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="digital_library.php">Fine Art Photography</a>
-                                            </li>
-                                        </ul>
-
-                                    </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item custom_nav_item dropdown">
-                                    <a class="nav-link custom_nav_link dropdown-toggle" href="#"
-                                        id="art_galleryDropdown" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link custom_nav_link dropdown-toggle" href="art_gallery.php">
                                         Art Gallery
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="art_galleryDropdown">
+                                    <div class="dropdown-menu">
+                                        <div class="drpdwn_header">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Landscape
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Macro
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Aerial
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Abstract
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Architectural
+                                                        Photography</a></li>
+                                            </ul>
 
-                                        <ul>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Landscape
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Macro
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Aerial
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Abstract
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Architectural
-                                                    Photography</a></li>
-                                        </ul>
+                                            <ul>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Cityscape
+                                                        Photography</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Editorial
+                                                        Photography</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Black and
+                                                        White/Monochrome
+                                                        Photography</a></li>
+                                                <li><a class="dropdown-item" href="art_gallery.php">Fine Art
+                                                        Photography</a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                        <ul>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Cityscape
-                                                    Photography</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Editorial
-                                                    Photography</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Black and
-                                                    White/Monochrome
-                                                    Photography</a></li>
-                                            <li><a class="dropdown-item" href="art_gallery.php">Fine Art Photography</a>
-                                            </li>
-                                        </ul>
-
-                                    </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item custom_nav_item">
                                     <a class="nav-link custom_nav_link" aria-current="page"
@@ -128,7 +132,7 @@
                             <ul class="more_option">
                                 <li><a href="editor.php">Image Editor</a></li>
                                 <li><a href="subscription.php">Pricing</a></li>
-                                <li><a href="javascript:;">Community</a></li>
+                                <li><a href="forum.php">Community</a></li>
                                 <li><a href="javascript:;">Join</a></li>
                                 <li><a href="javascript:;">Sign In</a></li>
                                 <li><a href="cart.php">
@@ -142,4 +146,25 @@
                 </div>
             </div>
         </div>
+        <div class="services_boxes">
+            <ul>
+                <li><a href="javascript:;">Stock Images</a></li>
+                <li><a href="javascript:;">Fine Art</a></li>
+                <li><a href="javascript:;">Image Editor</a></li>
+                <li><a href="javascript:;">Prints</a></li>
+            </ul>
+        </div>
     </header>
+
+    <div class="top_search_bar">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="input-group my-3 search_bar_input">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn" type="button" id="button-addon2"><i class="fad fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

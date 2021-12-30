@@ -121,12 +121,44 @@ $page = 'home';
                                                                         class="fas fa-crop-alt"></i></button>
                                                             </li>
                                                             <li class="crop_li">
-                                                                <button disabled id="apply_crop" class="crop_a"><i
-                                                                        class="fas fa-check"></i></button>
+                                                                <button onclick="aspectCrop(1,1)" class="crop_a">1 X
+                                                                    1</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(4,5)" class="crop_a">4 X
+                                                                    5</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(8.5,11)" class="crop_a">8.5
+                                                                    X 11</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(5,7)" class="crop_a">5 X
+                                                                    7</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(2,3)" class="crop_a">2 X
+                                                                    3</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(4,3)" class="crop_a">4 X
+                                                                    3</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(16,9)" class="crop_a">16 X
+                                                                    9</button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button onclick="aspectCrop(16,10)" class="crop_a">16 X
+                                                                    10</button>
                                                             </li>
                                                             <li class="crop_li">
                                                                 <button disabled id="cancel_crop" class="crop_a"><i
                                                                         class="fas fa-times"></i></button>
+                                                            </li>
+                                                            <li class="crop_li">
+                                                                <button disabled id="apply_crop" class="crop_a"><i
+                                                                        class="fas fa-check"></i></button>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -188,31 +220,62 @@ $page = 'home';
                                                 <div class="collapse" id="resize_collapse">
                                                     <div class="crop_items">
                                                         <div class="resize_field">
+                                                            <div
+                                                                class="use_resize_templates d-flex align-items-center justify-content-between">
+                                                                <h3 class="m-0 p-0">Predefine</h3>
+                                                                <select id="resize_preset"
+                                                                    onchange="resizepredefine(this.value)"
+                                                                    class="px-2 pe-4" name="" id="">
+                                                                    <option value="custom">Custom</option>
+                                                                    <option value="fb_post">facebook post</option>
+                                                                    <option value="fb_banner">facebook banner</option>
+                                                                    <option value="ins_post">Instagram post</option>
+                                                                    <option value="web_banner">Website Banners</option>
+                                                                    <option value="web_fluid">Website full width
+                                                                    </option>
+                                                                </select>
+                                                            </div>
                                                             <div class="row">
                                                                 <div class="col-12 py-1">
                                                                     <div class="row">
-                                                                        <div class="col-7">
-                                                                            <label for="width">Width</label>
-                                                                        </div>
                                                                         <div class="col-5">
+                                                                            <label for="height">Height</label>
+                                                                        </div>
+                                                                        <div class="col-7">
                                                                             <div class="field">
-                                                                                <input class="resize_inp" value="0"
-                                                                                    id="resize_width" type="number">
-                                                                                <span>px</span>
+                                                                                <input
+                                                                                    onkeyup='document.getElementById("resize_preset").selectedIndex = 0'
+                                                                                    class="resize_inp" value="0"
+                                                                                    id="resize_height" type="number">
+                                                                                <span class="resize_unit">
+                                                                                    <select name="" id="">
+                                                                                        <option value="px" selected>px
+                                                                                        </option>
+                                                                                        <option value="in">in</option>
+                                                                                    </select>
+                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12 py-1">
                                                                     <div class="row">
-                                                                        <div class="col-7">
-                                                                            <label for="height">Height</label>
-                                                                        </div>
                                                                         <div class="col-5">
+                                                                            <label for="width">Width</label>
+                                                                        </div>
+                                                                        <div class="col-7">
                                                                             <div class="field">
-                                                                                <input class="resize_inp" value="0"
-                                                                                    id="resize_height" type="number">
-                                                                                <span>px</span>
+                                                                                <input
+                                                                                    onkeyup='document.getElementById("resize_preset").selectedIndex = 0'
+                                                                                    class="resize_inp" value="0"
+                                                                                    id="resize_width" type="number">
+                                                                                <span class="resize_unit">
+                                                                                    <select name="" id="">
+                                                                                        <option value="px" selected>px
+                                                                                        </option>
+                                                                                        <option value="in">in</option>
+                                                                                    </select>
+                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -235,7 +298,7 @@ $page = 'home';
                                         </div>
                                         <div class="category_wise col-12">
                                             <h3>Adjustment</h3>
-                                            <div>
+                                            <div class="basic_adjustment">
                                                 <button class="cate_toggle collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#basicadjustcollapse"
                                                     aria-expanded="false" aria-controls="basicadjustcollapse">
@@ -249,8 +312,8 @@ $page = 'home';
                                                                 <label for="brightness">Brightness</label>
                                                             </div>
                                                             <div class="col-7">
-                                                                <input name="editing" type="range" name="" min="-255"
-                                                                    value="0" id="brightness" step="1" max="255">
+                                                                <input name="editing" type="range" name="" min="-1"
+                                                                    value="0" id="brightness" step="0.001" max="1">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -260,19 +323,52 @@ $page = 'home';
                                                                 <label for="Contrast">Contrast</label>
                                                             </div>
                                                             <div class="col-7">
-                                                                <input name="editing" type="range" name="" min="-255"
-                                                                    value="1" id="Contrast" step="0.1" max="255">
+                                                                <input name="editing" type="range" name="" min="-1"
+                                                                    value="0" id="Contrast" step="0.001" max="1">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <!-- <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="Contrast">Exposure</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="-0.7"
+                                                                    value="0" id="exposure" step="0.001" max="0.7">
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
                                                     <div class="range_field">
                                                         <div class="row">
                                                             <div class="col-5">
                                                                 <label for="Saturation">Saturation</label>
                                                             </div>
                                                             <div class="col-7">
-                                                                <input name="editing" type="range" name="" min="-500"
-                                                                    value="0" id="Saturation" step="1" max="500">
+                                                                <input name="editing" type="range" name="" min="-1"
+                                                                    value="0" id="Saturation" step="0.001" max="1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="Vibrance">Vibrance</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="-1"
+                                                                    value="0" id="Vibrance" step="0.001" max="1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="hue">Hue-Rotate</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="-1"
+                                                                    value="0" id="hue" step="0.001" max="1">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -289,7 +385,7 @@ $page = 'home';
                                                     </div> -->
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div class="fine_tune_div">
                                                 <button class="cate_toggle collapsed mt-3" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#finetunecollapse"
                                                     aria-expanded="false" aria-controls="finetunecollapse">
@@ -315,12 +411,59 @@ $page = 'home';
                                                             </div>
                                                             <div class="col-7">
                                                                 <input name="editing" type="range" name="" min="0"
-                                                                    value="0" id="noise" step="1" max="500">
+                                                                    value="0" id="noise" step="0.001" max="1">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="remove_noise">Remove Noise</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="20"
+                                                                    value="50" id="remove_noise" step="0.01" max="50">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="remove_noise">Smoothness</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="0"
+                                                                    value="50" id="remove_noise" step="0.01" max="50">
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="range_field">
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <label for="Sharpness">Sharpness</label>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <input name="editing" type="range" name="" min="0"
+                                                                    value="0" id="Sharpness" step="0.01" max="5">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center px-4 ">
+                                                        <label for="sharpnessSwitch">Sharpen Image</label>
+                                                        <!-- <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    role="switch" id="sharpnessSwitch">
+                                                            </div> -->
+
+                                                        <label class="switch">
+                                                            <input id="sharpenToggle" type="checkbox">
+                                                            <span class="switch_ round"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                             <div>
                                                 <button class="cate_toggle collapsed mt-3" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#colorcollapse"
@@ -395,18 +538,7 @@ $page = 'home';
                                                                         class="fas fa-crop-alt"></i></a>
                                                             </li>
                                                         </ul> -->
-                                                        <div
-                                                            class="d-flex justify-content-between align-items-center px-4">
-                                                            <label for="sharpnessSwitch">Sharpen Image</label>
-                                                            <!-- <div class="form-check form-switch">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    role="switch" id="sharpnessSwitch">
-                                                            </div> -->
-                                                            <label class="switch">
-                                                                <input id="sharpenToggle" type="checkbox">
-                                                                <span class="switch_ round"></span>
-                                                            </label>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -652,76 +784,111 @@ $page = 'home';
                                     </div>
                                     <div class="tab-pane fade" id="text_content" role="tabpanel"
                                         aria-labelledby="text_tab">
-                                        <div class="text_panel">
-                                            <div class="row m-3 my-4">
-                                                <div class="col-12 py-2">
-                                                    <div class="top_heading">
-                                                        <h4>Text</h4>
-                                                    </div>
+                                        <div class="category_wise">
+                                            <div class="text_panel">
+                                                <div class="top_heading">
+                                                    <h4>Add Text</h4>
                                                 </div>
-                                                <div class="text_items">
-                                                    <ul class="p-0 m-0">
-                                                        <li>
-                                                            <button onclick="insert_text()">Insert Text</button>
-                                                        </li>
-                                                        <li>
-                                                            <button
-                                                                onclick="text_styling('bold')"><strong>B</strong></button>
-                                                        </li>
-                                                        <li>
-                                                            <button onclick="text_styling('italic')"><i>I</i></button>
-                                                        </li>
-                                                        <li>
-                                                            <button
-                                                                onclick="text_styling('underline')"><u>U</u></button>
-                                                        </li>
-                                                    </ul>
-                                                    <ul class="p-0 m-0 my-3">
-                                                        <li>
-                                                            <button onclick="aligntext('left')"><i
-                                                                    class="fas fa-align-left"></i></button>
-                                                        </li>
-                                                        <li>
-                                                            <button onclick="aligntext('center')"><i
-                                                                    class="fas fa-align-center"></i></button>
-                                                        </li>
-                                                        <li>
-                                                            <button onclick="aligntext('right')"><i
-                                                                    class="fas fa-align-right"></i></button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="row align-items-center">
-                                                        <div
-                                                            class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-6">
-                                                            <h6 class="p-0 m-0">Font Family</h6>
-                                                        </div>
-                                                        <div
-                                                            class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-6 col-6">
-                                                            <select name="" id="font_family">
-                                                                <option value="Select Font Family" selected disabled>
-                                                                    Select Font Family</option>
-                                                                <option value="Arial, sans-serif">Arial, sans-serif
-                                                                </option>
-                                                                <option value="Verdana, sans-serif">Verdana, sans-serif
-                                                                </option>
-                                                                <option value="Helvetica, sans-serif">Helvetica,
-                                                                    sans-serif</option>
-                                                                <option value="Tahoma, sans-serif">Tahoma, sans-serif
-                                                                </option>
-                                                                <option value="Trebuchet MS, sans-serif">Trebuchet MS,
-                                                                    sans-serif</option>
-                                                                <option value="Times New Roman, serif">Times New Roman,
-                                                                    serif</option>
-                                                                <option value="Georgia, serif">Georgia, serif</option>
-                                                                <option value="Garamond, serif">Garamond, serif</option>
-                                                                <option value="Courier New, monospace">Courier New,
-                                                                    monospace</option>
-                                                                <option value="Brush Script MT, cursive">Brush Script
-                                                                    MT, cursive</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                <button class="cate_toggle collapsed mt-3" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#textcollapse"
+                                                    aria-expanded="false" aria-controls="textcollapse">
+                                                    <h5>Text</h5>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </button>
 
+                                                <div class="collapse" id="textcollapse">
+                                                    <div class="row m-3 my-4">
+                                                        <div class="col-12 py-2">
+
+                                                        </div>
+                                                        <div class="text_items">
+                                                            <div class="row align-items-center my-4">
+                                                                <div
+                                                                    class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7">
+                                                                    <!-- <h6 class="p-0 m-0">Font Family</h6> -->
+                                                                    <select name="" id="font_family">
+                                                                        <option value="Select Font Family" selected
+                                                                            disabled>
+                                                                            Select Font Family</option>
+                                                                        <option value="Arial, sans-serif">Arial,
+                                                                            sans-serif
+                                                                        </option>
+                                                                        <option value="Verdana, sans-serif">Verdana,
+                                                                            sans-serif
+                                                                        </option>
+                                                                        <option value="Helvetica, sans-serif">Helvetica,
+                                                                            sans-serif</option>
+                                                                        <option value="Tahoma, sans-serif">Tahoma,
+                                                                            sans-serif
+                                                                        </option>
+                                                                        <option value="Trebuchet MS, sans-serif">
+                                                                            Trebuchet MS,
+                                                                            sans-serif</option>
+                                                                        <option value="Times New Roman, serif">Times New
+                                                                            Roman,
+                                                                            serif</option>
+                                                                        <option value="Georgia, serif">Georgia, serif
+                                                                        </option>
+                                                                        <option value="Garamond, serif">Garamond, serif
+                                                                        </option>
+                                                                        <option value="Courier New, monospace">Courier
+                                                                            New,
+                                                                            monospace</option>
+                                                                        <option value="Brush Script MT, cursive">Brush
+                                                                            Script
+                                                                            MT, cursive</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div
+                                                                    class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
+
+                                                                    <div
+                                                                        class="d-flex align-items-baseline font_size_ col-8">
+                                                                        <div class="col-9">
+                                                                            <input class="text-center" value="10"
+                                                                                id="font_size" type="number">
+                                                                        </div>
+                                                                        <div class="col-3 ms-1">
+                                                                            <span>px</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="p-0 m-0">
+                                                                <!-- <li>
+                                                            <button onclick="insert_text()">Insert Text</button>
+                                                        </li> -->
+                                                                <li>
+                                                                    <button
+                                                                        onclick="text_styling('bold')"><strong>B</strong></button>
+                                                                </li>
+                                                                <li>
+                                                                    <button
+                                                                        onclick="text_styling('italic')"><i>I</i></button>
+                                                                </li>
+                                                                <li>
+                                                                    <button
+                                                                        onclick="text_styling('underline')"><u>U</u></button>
+                                                                </li>
+                                                                <li>
+                                                                    <button onclick="addText()">Insert Text</button>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="p-0 m-0 my-3">
+                                                                <li>
+                                                                    <button onclick="aligntext('left')"><i
+                                                                            class="fas fa-align-left"></i></button>
+                                                                </li>
+                                                                <li>
+                                                                    <button onclick="aligntext('center')"><i
+                                                                            class="fas fa-align-center"></i></button>
+                                                                </li>
+                                                                <li>
+                                                                    <button onclick="aligntext('right')"><i
+                                                                            class="fas fa-align-right"></i></button>
+                                                                </li>
+                                                            </ul>
+                                                            <!-- 
                                                     <div class="row align-items-center justify-content-between mt-2">
                                                         <div
                                                             class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-6">
@@ -739,55 +906,614 @@ $page = 'home';
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
 
-                                                    <div class="text_color py-4">
-                                                        <h5 class="m-0">Text Color</h5>
+                                                            <div class="text_color py-4">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-between">
+                                                                    <h5 class="m-0">Text Color</h5>
+                                                                    <input id="text_color" type="color" name="" id="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="category_wise">
+                                            <div class="text_panel">
+                                                <div class="top_heading">
+                                                    <h4>Add Shape</h4>
+                                                </div>
+                                                <button class="cate_toggle collapsed mt-3" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#shapeCollapse"
+                                                    aria-expanded="false" aria-controls="shapeCollapse">
+                                                    <h5>Shape</h5>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </button>
+
+                                                <div class="collapse" id="shapeCollapse">
+                                                    <div class="row m-3 my-4">
+                                                        <div class="text_items">
+                                                            <div class="insert_shape">
+                                                                <!-- <h4>Add Shapes</h4> -->
+                                                                <ul class="m-0 p-0 my-4">
+                                                                    <li>
+                                                                        <button onclick="shapeMode('square')"><i
+                                                                                class="far fa-square"></i></button>
+                                                                    </li>
+                                                                    <li>
+                                                                        <button onclick="shapeMode('circle')"><i
+                                                                                class="far fa-circle"></i></button>
+                                                                    </li>
+                                                                    <li>
+                                                                        <button onclick="shapeMode('triangle')"><i
+                                                                                class="far fa-triangle"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="shape_options">
+                                                                    <div class="option_item">
+                                                                        <h5>Stroke width</h5>
+                                                                        <div class="input_">
+                                                                            <input value="10" id="shape_stroke_width"
+                                                                                type="number" name="" id="">
+                                                                            <span>px</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="option_item">
+                                                                        <h5>Stroke color</h5>
+                                                                        <div>
+                                                                            <input type="color" name=""
+                                                                                id="shape_stroke_color">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="option_item">
+                                                                        <h5 class="bg_color__">
+                                                                            <input type="checkbox" name=""
+                                                                                id="bg_shape_check">
+                                                                            <label for="bg_shape_check">Background
+                                                                                color</label>
+                                                                        </h5>
+                                                                        <div class="d-flex align-items-center">
+                                                                            <input class="d_none_custom"
+                                                                                id="shape_bg_color" type="color"
+                                                                                name="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="tab-pane fade" id="template_content" role="tabpanel"
                                         aria-labelledby="template_tab">
                                         <div class="element_panel">
                                             <div class="row m-3 my-4">
                                                 <div class="col-12 py-2">
-                                                    <div class="top_heading">
+                                                    <div class="text-center">
                                                         <h4>Template</h4>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_1.jpg" alt="">
+                                                <div class="col-12 py-2">
+                                                    <select id="temp_cate"
+                                                        onchange="filter_images_templates(this.value)"
+                                                        class="select_templates">
+
+                                                        <optgroup label="Image Type">
+                                                            <option value="allImages">All Images</option>
+                                                            <option value="photos">Photos</option>
+                                                            <option value="vectors">Victors</option>
+                                                            <option value="illustration">Illustrations</option>
+                                                        </optgroup>
+                                                        <optgroup label="Orientation">
+                                                            <option value="allOrientation">All Orientation</option>
+                                                            <option value="horizontal">Horizontal</option>
+                                                            <option value="vertical">Vertical</option>
+                                                            <option value="square">Square</option>
+                                                            <option value="panoramic">Panoramic</option>
+                                                        </optgroup>
+                                                        <optgroup label="People">
+                                                            <option value="includePeople">Include People</option>
+                                                            <option value="excludePeople">Exclude People</option>
+                                                        </optgroup>
+                                                        <optgroup label="Categories">
+                                                            <option value="landscapeNature">Landscape &amp; Nature
+                                                            </option>
+                                                            <option value="macro">Macro</option>
+                                                            <option value="aerial">Aerial</option>
+                                                            <option value="abstract">Abstract</option>
+                                                            <option value="architecturalCityscape">Architectural &amp;
+                                                                Cityscape</option>
+                                                            <option value="editorial">Editorial</option>
+                                                            <!-- <option
+                                                                    value="Business, Online Learning, and eCommerce">
+                                                                    Business, Online Learning, and eCommerce</option> -->
+                                                            <option value="bWMonochrome">B and W &amp; Monochrome
+                                                            </option>
+                                                            <option value="fineArtPhotography">Fine Art Photography
+                                                            </option>
+                                                        </optgroup>
+                                                        <!-- <optgroup label="Color">
+                                                                <option value="color1">color 1</option>
+                                                                <option value="color2">color 2</option>
+                                                            </optgroup> -->
+                                                        <!-- <optgroup label="Image Size">
+                                                                <option value="anySize">Any Size</option>
+                                                                <option value="large">Large</option>
+                                                                <option value="medium">Medium</option>
+                                                                <option value="small">Small</option>
+                                                            </optgroup> -->
+
+                                                    </select>
                                                 </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_2.jpg" alt="">
+                                                <div class="row my-4 ">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <h4 class="m-0 p-0 ps-2"><label style="cursor:pointer;"
+                                                                for="temp_size_">Image Size</label></h4>
+                                                        <input type="checkbox" name="" id="temp_size_">
+                                                    </div>
+                                                    <div class="col-12 py-1 mt-2 temp_size_content"
+                                                        style="display: none;">
+                                                        <div class="crop_items">
+                                                            <div class="resize_field">
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <label for="height">Min Height</label>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div
+                                                                            class="field d-flex justify-content-between align-items-center">
+                                                                            <input onkeyup="tempSize()"
+                                                                                class="resize_inp" value=""
+                                                                                id="img_temp_height" type="number">
+                                                                            <span class="resize_unit search_size_uni">
+                                                                                <select class="" name="" id="">
+                                                                                    <option value="px" selected="">px
+                                                                                    </option>
+                                                                                    <option value="in">in</option>
+                                                                                </select>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 py-1">
+                                                                    <div class="row">
+                                                                        <div class="col-5">
+                                                                            <label for="width">Min Width</label>
+                                                                        </div>
+                                                                        <div class="col-7">
+                                                                            <div
+                                                                                class="field d-flex justify-content-between align-items-center">
+                                                                                <input onkeyup="tempSize()"
+                                                                                    class="resize_inp" value=""
+                                                                                    id="img_temp_width" type="number">
+                                                                                <span
+                                                                                    class="resize_unit search_size_uni">
+                                                                                    <select name="" id="">
+                                                                                        <option value="px" selected="">
+                                                                                            px
+                                                                                        </option>
+                                                                                        <option value="in">in</option>
+                                                                                    </select>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_3.jpg" alt="">
-                                                </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_4.jpg" alt="">
-                                                </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_5.jpg" alt="">
-                                                </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_6.jpg" alt="">
-                                                </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_7.jpg" alt="">
-                                                </div>
-                                                <div class="col-12 py-2 text-center">
-                                                    <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
-                                                        src="images/template_8.jpg" alt="">
+                                                <div class="bob">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div data-template="landscapeNature horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/landscape_nature_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="bWMonochrome horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/b_w_monochrome_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="bWMonochrome vertical includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/b_w_monochrome_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos vertical includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_4.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="architecturalCityscape vertical excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/architecture_cityscape_4.jpg"
+                                                            alt="illustration">
+                                                    </div>
+                                                    <div data-template="aerial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/aerial_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="illustration horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/illustration_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="illustration horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/illustration_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="fineArtPhotography square includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/fine_art_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="landscapeNature horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/landscape_nature_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="architecturalCityscape horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/architecture_cityscape_2.jpg"
+                                                            alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos vertical includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_7.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="fineArtPhotography horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/fine_art_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_3.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="bWMonochrome horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/b_w_monochrome_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="panoramic"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/panoramic_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="bWMonochrome vertical excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/b_w_monochrome_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="illustration horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/illustration_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="aerial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/aerial_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="panoramic"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/panoramic_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_8.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="landscapeNature horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/landscape_nature_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos vertical excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_6.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="editorial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/editorial_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="aerial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/aerial_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="architecturalCityscape vertical excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/architecture_cityscape_5.jpg"
+                                                            alt="illustration">
+                                                    </div>
+                                                    <div data-template="editorial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/editorial_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="architecturalCityscape horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/architecture_cityscape_1.jpg"
+                                                            alt="illustration">
+                                                    </div>
+                                                    <div data-template="panoramic"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/panoramic_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="illustration horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/illustration_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_5.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_6.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_1.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_7.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="vectors horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/template_2.jpg" alt="vectors">
+                                                    </div>
+                                                    <div data-template="fineArtPhotography vertical includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/fine_art_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="fineArtPhotography horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/fine_art_img_4.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="architecturalCityscape horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/architecture_cityscape_3.jpg"
+                                                            alt="illustration">
+                                                    </div>
+                                                    <div data-template="illustration horizontal includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/illustration_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos vertical includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_5.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="editorial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/editorial_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="panoramic"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/panoramic_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="panoramic"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/panoramic_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="fineArtPhotography square includePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/fine_art_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="editorial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/editorial_img_1.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="aerial horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/aerial_img_3.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="bWMonochrome horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/b_w_monochrome_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="photos  horizontal includePeople landscapeNature"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/photos_img_2.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_6.jpg" alt="illustration">
+                                                    </div>
+                                                    <div data-template="abstract horizontal excludePeople"
+                                                        class="col-12 py-2 text-center templates_img"
+                                                        style="display: block;">
+                                                        <img onclick="imageforEdit(this)" class="filter_imgs img-fluid"
+                                                            src="images/abstract_img_4.jpg" alt="illustration">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -879,6 +1605,7 @@ $page = 'home';
         </div>
     </section>
     <div id="logic"></div>
+    <script src="js/glfx.js"></script>
     <script type="text/javascript"
         src="https://api-storage.cloud.toast.com/v1/AUTH_e18353c4ea5746c097143946d0644e61/toast-ui-cdn/tui-image-editor/v3.11.0/example/fabric-v4.2.0.js">
     </script>
@@ -895,6 +1622,7 @@ $page = 'home';
     <!-- <script src="js/service-basic.js"></script> -->
     <!-- <script src="js/customeditor.js"></script> -->
     <script src="js/editor.js"></script>
+    <script src="js/editor2.js"></script>
 </main>
 <?php
 include 'includes/footer.php';

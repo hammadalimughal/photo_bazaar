@@ -31,124 +31,509 @@ $page = 'home';
                                 <div class="slider_area h-100">
                                     <div class="slider slider-for h-100">
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/pd-1.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/pd-1.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/pd-1.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-1.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-1.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-1.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-2.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-2.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-2.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-3.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-3.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-3.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-4.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-4.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-4.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-5.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-5.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-5.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-1.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-1.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-1.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-2.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-2.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-2.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-3.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-3.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-3.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-4.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-4.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-4.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="h-100 slider_area_slide_">
-                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-5.png"><i class="fas fa-expand"></i></a>
+                                            <a class="enlarge" data-fancybox data-type="image" href="images/sl-5.png"><i
+                                                    class="fas fa-expand"></i></a>
                                             <img src="images/sl-5.png" alt="Detail Img" class="img-fluid">
                                             <div class="share">
-                                            <a class="share_btn" href="javascript:;">Share <i class="fas fa-share"></i></a>
-                                            <ul>
-                                                <li><a href="javascript:;">Share to Instagram</a></li>
-                                                <li><a href="javascript:;">Share to Facebook</a></li>
-                                            </ul>
+                                                <a class="share_btn" href="javascript:;">Share <i
+                                                        class="fas fa-share"></i></a>
+                                                <div class="hvr_display">
+                                                    <div class="share_cntnt">
+                                                        <h5>Share</h5>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-facebook"></i></span>
+                                                                    <span>to Facebook</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-instagram"></i></span>
+                                                                    <span>to Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-twitter"></i></span>
+                                                                    <span>to Twitter</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fab fa-pinterest"></i></span>
+                                                                    <span>to Pinterest</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <span><i class="fas fa-envelope"></i></span>
+                                                                    <span>via Email</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -178,12 +563,12 @@ $page = 'home';
                                         <option value="3">Three</option>
                                     </select>
                                     <h5>You Can Download 5 Images </h5>
-                                    <a href="#">Become A Member</a>
+                                    <a href="subscription.php">Become A Member</a>
                                     <div class="buttons_area">
                                         <button>Download</button>
                                         <button onclick="location.href='wishlist.php'"><i class="fal fa-heart"></i> Save
                                             To My Wishlist</button>
-                                        <button>Edit This Image</button>
+                                        <button onclick="location.href='editor.php'">Edit This Image</button>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +576,7 @@ $page = 'home';
                         </div>
                     </div>
                     <div class="row slider_thumb_top">
-                        <h4>Image Title Here</h4>
+                        <h4>See Similiar Photos:</h4>
                         <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 col-xxl-11">
                             <div class="slider_thumb">
                                 <div class="slider slider-nav">

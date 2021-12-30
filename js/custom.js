@@ -1,9 +1,11 @@
 AOS.init({
   once: true
 });
+
 $('.stock_images').masonry({
   // options...
 });
+
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
 
@@ -13,21 +15,48 @@ $(window).scroll(function () {
     $(".backToTop").removeClass("opac_1");
   }
 });
+
 $(document).ready(function () {
   $('.container-fluid .active-box').click(function () {
     $('.container-fluid .active-box').removeClass("active");
     $(this).addClass("active");
   });
 });
+
+
+var swiper = new Swiper('.digitalFilterSlider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  loop: true,
+  coverflowEffect: {
+    rotate: 35,
+    stretch: 0,
+    depth: 50,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+
 // layout Masonry after each image loads
 $(".share_btn").click(function () {
   $(this).next().slideToggle()
 })
+
 $(".option").click(function () {
   $(".option").removeClass("active");
   $(this).addClass("active");
 
 });
+
 $('#banner_home').slick({
   infinite: true,
   slidesToShow: 1,
@@ -35,6 +64,7 @@ $('#banner_home').slick({
   dots: true,
   arrows: false
 });
+
 $('#testimonial_slider').slick({
   dots: false,
   arrows: false,
@@ -81,23 +111,32 @@ $('.slider_logo').slick({
   dots: false,
   arrows: false
 });
+
 $('.slider-for').slick({
   slidesToShow: 1,
+  autoplay: false,
   slidesToScroll: 1,
   arrows: false,
+  pauseOnFocus: true,
+  pauseOnHover: true,
   fade: true,
   asNavFor: '.slider-nav'
 });
+
 $('.slider-nav').slick({
   slidesToShow: 7,
   slidesToScroll: 1,
   asNavFor: '.slider-for',
   dots: false,
   arrows: false,
-  // centerMode: true,
+  centerMode: true,  
+  pauseOnFocus: true,
+  pauseOnHover: true,
+  centerPadding: '0px',
   focusOnSelect: true,
   autoplay: true
 });
+
 $('.responsive').slick({
   dots: true,
   infinite: false,
@@ -132,4 +171,9 @@ $('.responsive').slick({
     // settings: "unslick"
     // instead of a settings object
   ]
+});
+
+$(".filter_btn").click(function(){
+  $(this).parent().parent().children().children().removeClass('active');
+  $(this).addClass('active');
 });

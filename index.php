@@ -3,6 +3,11 @@ include 'includes/header.php';
 $page = 'home';
 ?>
 <main>
+    <style>
+        .top_search_bar{
+            display: none;
+        }
+    </style>
     <section class="home_banner_sec">
         <div class="home_banner_img" id="banner_home">
             <div class="slider_item item_1">

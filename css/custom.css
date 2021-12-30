@@ -23,6 +23,10 @@ html,
   text-decoration: none;
   scroll-behavior: smooth;
 }
+*:not(i){
+  font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+}
+
 
 body {
   overflow-x: hidden;
@@ -54,23 +58,60 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+.top_search_bar{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.top_search_bar .search_bar_input input{
+  height: 45px;
+  border: none;
+  outline: none;
+  background-color: #F1F1F1;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 0 30px;
+  box-shadow: none;
+  outline: none;
+}
+.top_search_bar .search_bar_input button{
+  height: 45px;
+  background-color: #ee7512;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+
 /* header begin */
-header.main_header {
+header.main_header{
+  position: relative;
   box-shadow: 1px 1px 38px #0000001f;
   background-color: #fff;
 }
-header.main_header .main_navbar {
+header.main_header .main_navbar{
   padding: 15px 20px;
+}
+header.main_header .main_navbar .navbar-brand img{
+  width: 100px;
 }
 header.main_header .main_navbar .main_nav_custom {
   padding-left: 20px;
 }
 header.main_header .main_navbar .custom_nav_item .custom_nav_link {
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 12px;
   color: #000000;
   padding-left: 15px;
   transition: 0.3s;
+}
+header.main_header .main_navbar .custom_nav_item.dropdown:hover > .dropdown-menu{
+  display: flex;
 }
 header.main_header .main_navbar .custom_nav_item .custom_nav_link:hover,
 header.main_header .main_navbar .custom_nav_item .custom_nav_link.show,
@@ -89,6 +130,7 @@ header.main_header .main_navbar ul.more_option li a {
   padding: 12px 20px;
   background-color: #c7c7c7;
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 12px;
   border-radius: 25px;
   color: #000;
@@ -138,12 +180,18 @@ header.main_header .main_navbar .custom_nav_item .dropdown-menu.show {
   display: flex;
 }
 header.main_header .main_navbar .custom_nav_item .dropdown-menu {
-  top: 150%;
+  top: 75%;
   left: 50%;
   transform: translateX(-30%);
-  box-shadow: 1px 1px 38px #0000001f;
   border: none;
+  padding-top: 20px;
+  z-index: 1001;
+}
+header.main_header .main_navbar .custom_nav_item .dropdown-menu .drpdwn_header{
+  box-shadow: 1px 1px 38px #0000001f;
   padding: 10px;
+  display: flex;
+
 }
 header.main_header .main_navbar .custom_nav_item .dropdown-menu ul {
   margin: 0;
@@ -151,6 +199,7 @@ header.main_header .main_navbar .custom_nav_item .dropdown-menu ul {
 }
 header.main_header .main_navbar .custom_nav_item .dropdown-menu .dropdown-item {
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 14px;
   transition: 0.3s;
   padding-bottom: 8px;
@@ -163,6 +212,31 @@ header.main_header .main_navbar .custom_nav_item .dropdown-menu .dropdown-item:f
   background-color: transparent;
   outline: none;
   border: none;
+}
+header.main_header .services_boxes{
+  position: absolute;
+  top: calc(100% - 24px);
+  left: 180px;
+  z-index: 1000;
+  background-color: #EE7512;
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+header.main_header .services_boxes ul{
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+header.main_header .services_boxes ul li{
+  padding: 0 15px;
+}
+header.main_header .services_boxes ul li a{
+  display: block;
+  padding: 10px 0;
+  color: #fff;
+}
+header.main_header .services_boxes ul li a:hover{
+  text-decoration: underline;
 }
 /* header end */
 
@@ -216,6 +290,7 @@ footer{
 }
 .footer_main .newsletter_footer h3{
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 36px;
 }
 .footer_main .newsletter_footer .news_later_form{
@@ -246,6 +321,14 @@ footer{
   color: #fff;
   border: none;
   outline: none;
+}
+.footer_main .footer_logo{
+  width: 200px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.footer_main .footer_logo:hover{
+  filter: brightness(1.2);
 }
 .footer_main .footer_links{
   margin-top: 100px;
@@ -291,6 +374,7 @@ footer{
 }
 .footer_main h5{
   font-family: "AquaWax black";
+font-weight: 900;
   color: #EE7512;
   font-size: 20px;
 }
@@ -319,7 +403,8 @@ footer{
   background-color: #ee7512;
 }
 footer .copy_right{
-  font-family: "AquaWax med";
+  font-family: "AquaWax Med";
+font-weight: 500;
   text-align: center;
   color: #fff;
   font-size: 16px;
@@ -362,7 +447,7 @@ footer .copy_right a{
 /* start art_gallery page  */
 
 .art_gallery {
-  padding: 5rem 0;
+  padding: 0 0 5rem;
   padding-bottom: 0;
 }
 
@@ -370,6 +455,7 @@ footer .copy_right a{
 
 .art_gallery .gallery_head h3 {
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 60px;
   color: #fff;
   letter-spacing: -1px;
@@ -378,7 +464,8 @@ footer .copy_right a{
 
 .art_gallery .gallery_head h3 span {
   color: #EE7512;
-  font-family: "AquaWax med";
+  font-family: "AquaWax Med";
+font-weight: 500;
 }
 
 .art_gallery .gallery_head p {
@@ -430,6 +517,7 @@ footer .copy_right a{
   place-items: center;
   min-height: 100%;
   font-family: "AquaWax Med";
+font-weight: 500;
   color: rgb(255 255 255);
   font-size: 21px;
   font-weight: 300;
@@ -449,7 +537,7 @@ footer .copy_right a{
   transition: all 0.4s ease-in-out;
 }
 .filter_sort{
-  text-align: right;
+  text-align: left;
 }
 .filter_sort select{
   background-color: #272727;
@@ -460,6 +548,7 @@ footer .copy_right a{
   margin-top: 10px;
   padding: 5px 10px;
   font-family: "AquaWax Med";
+font-weight: 500;
   border-radius: 3px;
 }
 .stock_images{
@@ -511,6 +600,7 @@ footer .copy_right a{
 .stock_images .fine_art_item .hvr_content h6,
 .stock_images .fine_art_item .hvr_content h5{
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 24px;
   color: #fff;
 }
@@ -525,6 +615,60 @@ footer .copy_right a{
   color: #fff;
   font-size: 30px;
 }
+.stock_page_main .left_bar .stock_filters{
+  color: #fff;
+}
+.stock_page_main .left_bar h4{
+  font-family: "AquaWax Med";
+font-weight: 500;
+  font-size: 20px;
+}
+.stock_page_main .left_bar h4 span{
+  color: #EE7512;
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item{
+  padding: 5px 0;
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item .collapse_anc{
+  color: #fff;
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item .collapse_anc i{
+  font-size: 14px;
+  padding-left: 8px;
+  transition: 0.3s;
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item .collapse_anc:not(.collapsed) i{
+  transform: rotate(90deg);
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item .filter_btn{
+  display: block;
+  background-color: rgb(244 244 244);
+  outline: none;
+  font-family: "AquaWax Med";
+font-weight: 500;
+  font-size: 14px;
+  border: none;
+  color: #000;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+}
+.stock_page_main .left_bar .stock_filters .stock_filter_item .filter_btn.active{
+  background-color: #ee7512;
+  color: #fff;
+}
+/* font families  */
+  /* font-family: "AquaWax Light";
+font-weight: 300; */
+  /* font-family: "AquaWax Med";
+font-weight: 500; */
+  /* font-family: "AquaWax black";
+font-weight: 900; */
+  /* font-family: "segoe"; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Montserrat', sans-serif; */
 /* .art_gallery .gallery_box .box.active {
   width: 300px;
   transition: all 0.4s ease-in-out;
@@ -624,6 +768,7 @@ footer .copy_right a{
   background: rgb(238 117 18);
   color: rgb(255 255 255);
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 14px;
   margin-top: 24px;
   font-weight: 700;
@@ -665,6 +810,7 @@ footer .copy_right a{
   color: rgb(255 255 255);
   letter-spacing: 0.3px;
   font-family: "AquaWax Med";
+font-weight: 500;
 }
 
 .banner_photo .content p {
@@ -686,6 +832,7 @@ footer .copy_right a{
   background: rgb(238 117 18);
   color: rgb(255 255 255);
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 14px;
   margin-top: 24px;
   font-weight: 700;
@@ -740,17 +887,64 @@ footer .copy_right a{
   padding: 5rem 0;
   padding-bottom: 0;
 }
+.digital_filter_slider .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
+.digital_filter_slider .swiper-slide {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+.digital_filter_slider .swiper-slide .filter_digi_cont{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  opacity: 0.5;
+  transition: 0.5;
+}
+.digital_filter_slider .swiper-slide-active .filter_digi_cont{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+.digital_filter_slider .swiper-slide .filter_digi_cont h4{
+    text-align: center;
+}
+.digital_filter_slider .swiper-slide .filter_digi_cont h5{
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+}
+.digital_filter_slider .swiper-slide img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
 .digital_page .gallery_head {}
 
 .digital_page .gallery_head h3 {
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 65px;
   color: aliceblue;
 }
 
 .digital_page .gallery_head h3 span {
-  font-family: "AquaWax med";
+  font-family: "AquaWax Med";
+font-weight: 500;
   color: #EE7512;
 }
 
@@ -802,7 +996,8 @@ footer .copy_right a{
   transition: all 0.9s ease-in-out;
 }
   .active-box .active-box-desc .head{
-  font-family: "AquaWax med";
+  font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 40px;
   text-transform: capitalize;
   color: #fff;
@@ -816,7 +1011,8 @@ position: absolute;
 bottom: 208px;
 }
   .active-box .active-box-desc .para{
-    font-family: "AquaWax light";
+    font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 0px;
   text-transform: inherit;
   color: #fff;
@@ -876,6 +1072,7 @@ bottom: 208px;
 }
   .active-box.active .active-box-desc .head{
     font-family: "AquaWax black";
+font-weight: 900;
   font-size: 30px;
   text-transform: capitalize;
   color: #fff;
@@ -998,6 +1195,7 @@ bottom: unset;
   background: rgb(238 117 18);
   color: rgb(255 255 255);
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 14px;
   margin-top: 24px;
   font-weight: 700;
@@ -1036,6 +1234,7 @@ bottom: unset;
   color: rgb(255 255 255);
   letter-spacing: 0.3px;
   font-family: "AquaWax Med";
+font-weight: 500;
 }
 
 .digital_page .banner_photo .content p {
@@ -1057,6 +1256,7 @@ bottom: unset;
   background: rgb(238 117 18);
   color: rgb(255 255 255);
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 15px;
   margin-top: 24px;
   font-weight: 700;
@@ -1147,15 +1347,23 @@ position: absolute;
   color: #fff;
   transition: .5s;
 }
-.slider_area_slide_ .share ul{
+
+.slider_area_slide_ .share .hvr_display{
   position: absolute;
-  bottom: 78%;
-  right: 15px;
-  width: 180px;
+  bottom: 50%;
+  right: 0;
+  width: 200px;
+  padding: 10px;
+  display: none;
+  transition: 0.3s;
+}
+.slider_area_slide_ .share:hover > *{
+  display: block;
+}
+.slider_area_slide_ .share ul{
   background-color: #272727;
   border-radius: 5px;
   padding-left: 10px;
-  display: none;
 }
 .slider_area_slide_ .share ul li{
   padding: 5px 0;
@@ -1166,6 +1374,15 @@ position: absolute;
 }
 .slider_area_slide_ a:hover{
   transform: scale(1.1);
+}
+.slider_area_slide_ .share a:hover{
+  transform: none;
+}
+.slider_area_slide_ .share a span:nth-child(1){
+  margin-right: 10px;
+}
+.slider_area_slide_ .share a:hover span:nth-child(1){
+  color: #ee7512;
 }
 .product_detail .slider_area img {
   width: 100%;
@@ -1207,6 +1424,7 @@ position: absolute;
 
 .product_detail .slider_detail h2 {
   font-family: "AquaWax Med";
+font-weight: 500;
   margin: 0;
   padding: 12px 0 5px;
   font-size: 24px;
@@ -1215,6 +1433,7 @@ position: absolute;
 
 .product_detail .slider_detail h6 {
   font-family: "AquaWax Med";
+font-weight: 500;
   background: rgb(0 0 0);
   padding: 10px 23px;
   border-radius: 47px;
@@ -1269,6 +1488,7 @@ position: absolute;
   color: #585656;
   border: none;
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 18px;
   cursor: pointer;
   appearance: none;
@@ -1339,10 +1559,11 @@ position: absolute;
   padding: 0;
 }
 .slider_thumb_top h4{
-  text-align: center;
-  font-family: "AquaWax Black";
+  /* text-align: center; */
+  font-family: "AquaWax black";
+font-weight: 900;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .slider_thumb_top .slider_thumb .slick-slide img {
@@ -1393,6 +1614,7 @@ position: absolute;
 
 .subcription .subscription_head h3 {
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 53px;
   color: #000;
 }
@@ -1417,13 +1639,26 @@ position: absolute;
   padding: 2rem 0 3rem 0;
   text-align: center;
 }
-
+.subcription .subscription_plans .nav-pills .nav-item .nav-link{
+  border: none;
+  outline: none;
+  color: #ee7512;
+}
+.subcription .subscription_plans .nav-pills .nav-item .nav-link.active{
+  /* background-color: #ee7512; */
+  background-color: transparent;
+  border-bottom: 2px solid #ee7512;
+  color: #ee7512;
+}
 .subcription .subscription_plans .card_1 {
   border: 2px solid transparent;
   text-align: center;
   padding: 42px 20px;
   transition: all 0.5s ease-in-out;
   position: relative;
+}
+.subcription .subscription_plans .card_1 {
+
 }
 
 .subcription .subscription_plans .card_1 h4 {
@@ -1438,23 +1673,28 @@ position: absolute;
   padding: 24px 0;
 }
 
-.subcription .subscription_plans .card_1 ul li {
+.subcription .subscription_plans .card_1 ul li a{
+  display: inline-block;
   font-family: 'Ubuntu', sans-serif;
   color: #A1AEB7;
   padding: 9px 0;
+  transition: .5s;
+}
+.subcription .subscription_plans .card_1 ul li a:hover{
+  color: #000;
 }
 
 .subcription .subscription_plans .card_1 button {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
-  padding: 13px 55px;
+  padding: 10px 15px;
   outline: none;
   transition: all 0.5s ease-in-out;
   border: none;
   background: #979797;
   color: #fff;
   border-radius: 9px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .subcription .subscription_plans .card_1:hover {
@@ -1525,6 +1765,11 @@ position: absolute;
 }
 .home_banner_sec .slider_item figure{
   width: 100%;
+  height: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .home_banner_sec .slider_item figure img{
   width: 100%;
@@ -1572,22 +1817,26 @@ position: absolute;
 }
 .home_banner_sec .home_banner_content h2 {
   font-family: "AquaWax Med";
+font-weight: 500;
   margin-top: 40px;
   font-size: 44px;
   letter-spacing: -1.8px;
 }
 .home_banner_sec .home_banner_content h2 span {
   font-family: "AquaWax black";
+font-weight: 900;
   color: #ee7512;
 }
 .home_banner_sec .home_banner_content h3 {
   font-family: "AquaWax Med";
+font-weight: 500;
   margin-top: 40px;
   font-size: 70px;
   letter-spacing: -1.8px;
 }
 .home_banner_sec .home_banner_content h3 span {
   font-family: "AquaWax black";
+font-weight: 900;
   color: #ee7512;
 }
 
@@ -1600,8 +1849,9 @@ position: absolute;
 }
 .home_banner_sec .home_banner_content .search_banner select {
   width: 100%;
-  height: 90px;
+  height: 70px;
   font-family: "AquaWax Med";
+  font-weight: 500;
   font-size: 22px;
   display: flex;
   align-items: center;
@@ -1628,12 +1878,13 @@ position: absolute;
 }
 .home_banner_sec .home_banner_content .search_banner input {
   width: 100%;
-  height: 90px;
+  height: 70px;
   outline: none;
   border: none;
   background-color: transparent;
   padding-left: 25px;
   font-family: "AquaWax Med";
+  font-weight: 500;
   font-size: 18px;
 }
 .home_banner_sec .home_banner_content .search_banner input::placeholder {
@@ -1641,7 +1892,7 @@ position: absolute;
 }
 .home_banner_sec .home_banner_content .search_banner button {
   width: 100%;
-  height: 90px;
+  height: 70px;
   color: #ee7512;
   font-size: 24px;
   border: none;
@@ -1663,6 +1914,7 @@ position: absolute;
 }
 .home_banner_sec .home_banner_content .suggested_keywords h5 {
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 18px;
   color: #ee7512;
   text-transform: uppercase;
@@ -1704,10 +1956,11 @@ position: absolute;
   position: relative;
   background-color: #000;
   margin-top: -10px;
-  padding: 100px 0;
+  padding: 85px 0;
 }
 .fineart_gallery h2{
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 60px;
   color: #fff;
   letter-spacing: -1px;
@@ -1716,6 +1969,7 @@ position: absolute;
 .fineart_gallery h2 span{
   color: #EE7512;
   font-family: "AquaWax Med";
+font-weight: 500;
 }
 .fineart_gallery p{
   font-family: 'Roboto', sans-serif;
@@ -1804,6 +2058,7 @@ position: absolute;
   text-align: center;
   color: #ee7512;
   font-family: "AquaWax black";
+font-weight: 900;
   transition: 0.5s;
   font-size: 22px;
 }
@@ -1812,6 +2067,7 @@ position: absolute;
 }
 .fineart_gallery .fine_art_item h5{
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 26px;
   text-align: center;
   color: #fff;
@@ -1870,6 +2126,7 @@ position: absolute;
 .premium_online .premium_online_content h4,
 .become_member .member_content h4{
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 46px;
 }
 .premium_online .premium_online_content h4 span,
@@ -1891,6 +2148,7 @@ position: absolute;
   outline: none;
   padding: 15px 50px;
   font-family: "AquaWax black";
+font-weight: 900;
   color: #fff;
   transition: .5s;
 }
@@ -2013,6 +2271,9 @@ position: absolute;
   max-height: 100vh;
 }
 .editor_detail .category_wise{
+  padding: 10px 0 0;
+}
+.editor_detail .category_wise:nth-child(1){
   padding: 40px 0 0;
 }
 .editor_detail .category_wise h3{
@@ -2039,9 +2300,11 @@ position: absolute;
 }
 .editor_detail .category_wise button.cate_toggle i{
   font-size: 12px;
+  transition: .3s;
 }
 .editor_detail .category_wise button.cate_toggle:not(.collapsed) i{
   color: #ee7512;
+  transform: rotate(-180deg);
 }
 .editor_detail .category_wise .cate_toggle_content{
   padding: 0 20px;
@@ -2062,6 +2325,7 @@ position: absolute;
   font-size: 11px;
   border-radius: 8px;
   font-family: "AquaWax Med";
+font-weight: 500;
 }
 .editor_detail .category_wise .apply_resize:active{
   background-color: #000;
@@ -2081,12 +2345,14 @@ position: absolute;
   border-radius: 5px;
   width: 50px;
   height: 50px;
-  font-size: 12px;
+  font-size: 10px;
   background-color: #181A1A;
   color: #fff;
   border: none;
   outline: none;
   margin: 10px 0 0 10px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
 }
 .editor_detail .category_wise .crop_items .crop_li button:disabled{
   opacity: .5;
@@ -2340,7 +2606,7 @@ input:checked + .switch_:before {
   font-size: 16px;
 }
 .editor .resize_field input{
-  width: 60px;
+  width: 65%;
   height: 30px;
   background-color: #101010;
   border: none;
@@ -2348,6 +2614,15 @@ input:checked + .switch_:before {
   color: #fff;
   outline: none;
   border-radius: 10px;
+}
+.editor .resize_field .resize_unit select{
+  padding-right: 20px;
+}
+.editor .text_panel .text_color input{
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
 }
 /* Chrome, Safari, Edge, Opera */
 .editor .resize_field input::-webkit-outer-spin-button,
@@ -2396,7 +2671,7 @@ input.tui-colorpicker-palette-button{
   width: 15px;
   height: 15px;
 }
-.editor .blend_mode select{
+.editor select{
   background-color: #000;
   border: none;
   border-radius: 5px;
@@ -2408,6 +2683,7 @@ input.tui-colorpicker-palette-button{
   background-size: 8px;
   padding-left: 5px;
   outline: none;
+
 }
 .editor .element_panel .search_element{
   width: 100%;
@@ -2429,6 +2705,23 @@ input.tui-colorpicker-palette-button{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   margin: 0;
+}
+.editor .element_panel .select_templates{
+  width: 100%;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  padding: 5px 10px;
+}
+.editor .element_panel .select_templates optgroup{
+  border-bottom: 1px solid #fff;
+  color: #ee7512;
+}
+.editor .element_panel .select_templates option{
+  width: 100%;
+  color: #fff;
+}
+.editor .element_panel .temp_size_content{
+  display: none;
 }
 
 .editor .element_panel a{
@@ -2487,15 +2780,54 @@ u{
   border-radius: 5px;
   outline: none;
 }
+.editor .text_panel .font_size_{
+  background: #181a1a;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+.editor .text_panel h5{
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+.editor .text_panel .font_size_ span{
+  color: #fff;
+  font-size: 12px;
+}
 .editor .text_panel input[type="number"]::-webkit-outer-spin-button,
 .editor .text_panel input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+.editor .text_panel .insert_shape{
+  text-align: left;
+}
 /* Firefox */
 .editor .text_panel input[type="number"]{
   -moz-appearance: textfield;
+}
+.editor .text_panel .shape_options .option_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.editor .text_panel .shape_options .option_item .input_{
+  background-color: #181a1a;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 3px;
+}
+.editor .text_panel .shape_options .option_item .input_ input{
+  max-width: 50px;
+}
+.editor .text_panel .shape_options .option_item label{
+  cursor: pointer;
+}
+.d_none_custom{
+  display: none;
 }
 .lbl_one_1{
   position: absolute;
@@ -2623,9 +2955,12 @@ u{
 /* editor end  */
 
 /* font families  */
-  /* font-family: "AquaWax Light"; */
-  /* font-family: "AquaWax Med"; */
-  /* font-family: "AquaWax black"; */
+  /* font-family: "AquaWax Light";
+font-weight: 300; */
+  /* font-family: "AquaWax Med";
+font-weight: 500; */
+  /* font-family: "AquaWax black";
+font-weight: 900; */
   /* font-family: "segoe"; */
   /* font-family: 'Poppins', sans-serif; */
   /* font-family: 'Lato', sans-serif; */
@@ -2740,7 +3075,7 @@ u{
 
 .wishlist_page .wishlist_table table tr th:nth-child(1),
 .wishlist_page .wishlist_table table tr td:nth-child(1){
-  width: 15%;
+  width: 25%;
 }
 .wishlist_page .wishlist_table table tbody tr{
   background-color: #fff;
@@ -2750,10 +3085,13 @@ u{
   text-align: center;
   width: 20%;
   vertical-align: middle;
+  width: 25%;
 }
 .wishlist_page .wishlist_table table tr th:nth-child(2),
 .wishlist_page .wishlist_table table tr td:nth-child(2){
   text-align: left;
+  width: 50%;
+  padding-left: 50px;
 }
 .wishlist_page .wishlist_table table tr th{
   font-family: 'Poppins', sans-serif;
@@ -2767,11 +3105,14 @@ u{
   font-family: 'Montserrat', sans-serif;
   color: #444444;
   font-size: 16px;
+  vertical-align: middle;
 }
 .wishlist_page .wishlist_table table tr td:nth-last-child(1) a{
   color: #EE7512;
   font-size: 20px;
+  margin: 0 5px;
 }
+
 .wishlist_page .wishlist_table table tr td h2{
   font-size: 16px;
   font-weight: 700;
@@ -2824,6 +3165,13 @@ u{
   height: 45px;
   margin-left: 20px;
 }
+.wishlist_page .wishlist_table .right_btn button:nth-child(1){
+  opacity: 0.15;
+  transition: 0.3s;
+}
+.wishlist_page .wishlist_table .right_btn button:nth-child(1):hover{
+  opacity: 0.3;
+}
 .wishlist_page .wishlist_table .buttons_table .right_btn button:nth-child(2){
   text-transform: capitalize;
 }
@@ -2838,6 +3186,7 @@ u{
 }
 .wishlist_page .cuppon_cards .card h3{
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
@@ -2888,13 +3237,14 @@ u{
 
 /* checkout start  */
 .checkout_page{
-  padding: 80px 0;
+  padding: 40px 0;
   padding-bottom: 150px;
   background-image: url(../images/background_cameras.png);
   background-size: cover;
 }
 .checkout_page h2{
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 24px;
   margin-bottom: 20px;
   letter-spacing: -2px;
@@ -2918,9 +3268,10 @@ u{
 .checkout_page .left_section .log_in_card .input_field input{
   width: 100%;
   outline: none;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #c9c9c9;
   height: 35px;
   font-family: 'Poppins', sans-serif;
+  padding-left: 10px;
 }
 .checkout_page .left_section .log_in_card .btn_sign_in{
   margin-top: 15px;
@@ -2935,12 +3286,17 @@ u{
   border: none;
   outline: none;
   border-radius: 5px;
+  transition: 0.5s;
+}
+.checkout_page .left_section .log_in_card .btn_sign_in button:hover{
+  background-color: #ee7512;
 }
 .checkout_page .left_section .log_in_card .btn_sign_in a{
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #ee7512;
+  transition: 0.5s;
 }
 .checkout_page .left_section .log_in_card h4{
   font-family: 'Montserrat', sans-serif;
@@ -2960,7 +3316,7 @@ u{
   padding-left: 10px;
 }
 .checkout_page .left_section .log_in_card .continue{
-  background-color: #000;
+  background-color: #ee7512;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #fff;
@@ -2970,6 +3326,10 @@ u{
   outline: none;
   border-radius: 5px;
   margin-top: 50px;
+  transition: 0.5s;
+}
+.checkout_page .left_section .log_in_card .continue:hover{
+  background-color: #000;
 }
 .checkout_page .right_section .ord_summ_card{
   padding: 16px 30px 35px;
@@ -2979,6 +3339,7 @@ u{
 }
 .checkout_page .right_section .ord_summ_card h3{
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 24px;
   letter-spacing: -2px;
 }
@@ -2990,6 +3351,7 @@ u{
 }
 .checkout_page .right_section .ord_summ_card h4{
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -3037,9 +3399,9 @@ u{
   font-size: 18px;
   font-weight: 700;
 }
-.checkout_page .billing_form{
+/* .checkout_page .billing_form{
   margin-top: 60px;
-}
+} */
 .checkout_page .billing_form input{
   width: 100%;
   outline: none;
@@ -3067,16 +3429,18 @@ u{
   background-size: cover;
 }
 .Contactus_page .contact_form{
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .Contactus_page .contact_form h2{
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 65px;
   text-align: center;
   letter-spacing: -2px;
 }
 .Contactus_page .contact_form h2 span{
   font-family: "AquaWax Med";
+font-weight: 500;
   color: #ee7512;
 }
 .Contactus_page .contact_form p{
@@ -3119,6 +3483,7 @@ u{
   height: 55px;
   border-radius: 5px;
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 18px;
   color: #fff;
 }
@@ -3138,6 +3503,7 @@ u{
 .cart_page .cart_start .left_card h2{
   font-size: 24px;
   font-family: "AquaWax black";
+font-weight: 900;
   margin: 0;
   letter-spacing: -2px;
   padding: 0;
@@ -3151,6 +3517,7 @@ u{
 }
 .cart_page .cart_start .left_card h3{
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 18px;
 }
 .cart_page .cart_start .left_card h4{
@@ -3199,6 +3566,7 @@ u{
 .cart_page .cart_start h2{
   margin-top: 40px;
   font-family: "AquaWax black";
+font-weight: 900;
   font-size: 24px;
 }
 .cart_page .cart_start .right_card{
@@ -3255,6 +3623,7 @@ u{
   outline: none;
   background-color: #000;
   font-family: "AquaWax Light";
+font-weight: 300;
   font-size: 16px;
   border-radius: 5px;
   color: #fff;
@@ -3268,13 +3637,15 @@ u{
   background-size: cover;
 }
 .about_us_page h2{
-  margin: 90px 0 40px 0;
+  margin: 20px 0 40px 0;
   font-family: "AquaWax Light";
+font-weight: 300;
   text-align: center;
   font-size: 65px;
 }
 .about_us_page h2 span{
   font-family: "AquaWax Med";
+font-weight: 500;
   color: #ee7512;
 }
 .about_us_page p{
@@ -3363,6 +3734,7 @@ u{
 .about_us_page .testimonials .slider_slide .slide_content h4{
   color: #417CA4;
   font-family: "AquaWax Med";
+font-weight: 500;
   font-size: 16px;
   margin-top: 10px;
   text-align: center;
@@ -3387,8 +3759,379 @@ u{
 }
 /* about_us_page end  */
 
+/* forum_start */
+.forum_start .profile_mail{
+  display: flex;
+  align-items: baseline;
+}
+.forum_start a{
+  color: #ee7512;
+}
+.forum_start a:hover{
+  text-decoration: underline;
+}
+.forum_start .profile_mail h6{
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+}
+.forum_start .profile_mail a{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  font-size: 14px;
+  background-color: #ee7512;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  transition: 0.5s;
+}
+.forum_start .profile_mail a:hover{
+  transform: scale(1.04);
+}
+.forum_start .forum_content{
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.forum_start .forum_content hr{
+  margin: 0;
+}
+.forum_start .forum_content h6{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666666;
+  margin: 0;
+  padding: 10px 15px;
+}
+.forum_start .forum_content h6 span{
+  color: #000;
+}
+.forum_start .forum_content h5{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 10px 15px;
+  margin: 0;
+}
+.forum_start .forum_content h3{
+  margin: 0;
+  padding: 0;
+}
+.forum_start .forum_content h3 a{
+  color: #ee7512;
+  padding: 10px 15px 0;
+  margin: 0;
+}
+.forum_start .forum_content h3 a:hover{
+  text-decoration: underline;
+}
+.forum_start .forum_content p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #585656;
+  font-size: 14px;
+  margin: 0;
+  padding: 0 15px 5px;
+}
+.forum_start .forum_content .categorize_item{
+  display: flex;
+  align-items: center;
+  padding: 0 10px 10px;
+  margin: 5px 0;
+  border-bottom: 1px solid #5856562d;
+}
+.forum_start .forum_content .categorize_item:nth-child(1){
+  margin-top: 15px;
+}
+.forum_start .forum_content .categorize_item .cat_icon{
+  color: #212529;
+  font-size: 26px;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li{
+  margin: 0;
+  padding: 10px 15px;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec{
+  display: flex;
+  align-items: center;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec span{
+  color: #417ca4;
+  font-size: 26px;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec h4{
+  margin: 0;
+  padding: 0;
+  padding: 0 15px 5px;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec h4 a{
+  color: #417ca4;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec p a{
+  color: #ee7512;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .lft_sec p a:hover{
+  text-decoration: underline;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li .rgt_sec{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
+}
+.forum_start .forum_content .num{
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+.forum_start .forum_content .num_lbl{
+  display: block;
+  font-size: 14px;
+}
+.forum_start .forum_content .latst_sec ul.latst_sec_li li:nth-last-child(1){
+  border-bottom: 1px solid #5856562d;
+  padding-bottom: 10px;
+}
+.forum_start .forum_content .pagination{
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.forum_start .forum_content .pagination li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ee7512;
+  color: #fff;
+  border-left: 1px solid #fff;
+} 
+.forum_start .forum_content .latst_sec .pagination li:nth-child(1) a{
+  border-radius: 5px 0 0 5px;
+}
+.forum_start .forum_content .latst_sec .pagination li:nth-last-child(1) a{
+  border-radius: 0 5px 5px 0;
+}
+.forum_start .forum_content .popular_tags{
+  padding-bottom: 20px;
+}
+.forum_start .forum_content .popular_tags ul{
+  margin: 0;
+  padding: 0;
+}
+.forum_start .forum_content .popular_tags ul li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+.forum_start .forum_content .popular_tags ul li:nth-last-child(1){
+  border-bottom: 1px solid #5856562d;
+  padding-bottom: 10px;
+}
 
-
+.forum_start .forum_content .popular_tags ul li .lft_sec{
+  display: flex;
+  align-items: center;
+}
+.forum_start .forum_content .popular_tags ul li .lft_sec .hash_{
+  display: block;
+  padding-right: 10px;
+  font-size: 26px;
+  color: #417ca4;
+}
+.forum_start .forum_content .popular_tags ul li .lft_sec h4{
+  margin: 0;
+  padding: 0;
+}
+.forum_start .forum_content .popular_tags ul li .lft_sec h4 a{
+  color: #585656;
+  transition: 0.3s;
+}
+.forum_start .forum_content .popular_tags ul li .lft_sec h4 a:hover{
+  color: #000;
+}
+.forum_start .forum_content .popular_tags ul li .rgt_sec{
+  text-align: center;
+}
+.forum_main .pagination{
+  padding-top: 10px !important;
+  padding-left: 15px !important;
+}
+.forum_main .pagination li{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.forum_main .pagination li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #ee7512;
+  color: #fff;
+  border-left: 1px solid #fff;
+} 
+.forum_main .pagination li:nth-child(1) a{
+  border-radius: 5px 0 0 5px;
+}
+.forum_main .pagination li:nth-last-child(1) a{
+  border-radius: 0 5px 5px 0;
+}
+.forum_main .comment_field label{
+  color: #585656;
+  font-family: 'Lato', sans-serif;
+  margin: 0 15px;
+  font-weight: 700;
+}
+.forum_main .comment_field textarea{
+  width: calc(100% - 30px);
+  height: 100px;
+  margin: 0 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+.forum_main button.send{
+  background-color: #417ca4;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  padding: 10px 40px;
+  margin: 10px 15px 0;
+  border-radius: 10px;
+}
+.forum_main button.send:hover{
+  background-color: #2a4f68;
+}
+.forum_main .comments_content{
+  margin: 0;
+  padding: 0 15px;
+}
+.forum_main .comments_content h5 span{
+  background-color: #EE7512;
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.forum_main .comments_content li{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #5856562d;
+  padding: 10px 0;
+}
+.forum_main .comments_content li figure{
+  width: calc(10% - 30px);
+  border-radius: 50%;
+  margin: 0 30px;
+  overflow: hidden;
+  padding: 4px;
+  border: 4px solid #2a4f68;
+}
+.forum_main .comments_content li figure img{
+  border-radius: 50%;
+}
+.forum_main .comments_content li .head_line{
+  margin: 0 15px;
+}
+.forum_main .comments_content li .head_line .date{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #585656;
+  margin-left: 5px;
+}
+.forum_main .comments_content li p{
+  font-size: 16px;
+}
+.forum_main .user_comments{
+  padding: 0 20px;
+}
+.forum_main .user_comments .comment_item{
+  padding: 5px 0;
+}
+.forum_main .user_comments .time_period{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #000;
+  margin-right: 5px;
+}
+.forum_main .user_comments hr{
+  margin: 5px 0;
+}
+.forum_main .writer_img figure{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid #417CA4;
+  padding: 4px;
+}
+.forum_main .writer_img h4{
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.forum_main .writer_img figure img{
+  border-radius: 50%;
+}
+.forum_main .write_bio ul li{
+  display: flex;
+  align-items: center ;
+}
+.photographerofthemonth{
+  position: relative;
+  margin: 85px 0 0;
+}
+.photographerofthemonth .banner_content_{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40%;
+  right: 25%;
+  color: #fff;
+}
+.photographerofthemonth .banner_content_ h3{
+  font-size: 40px;
+}
+.photographerofthemonth .banner_content_ p{
+  font-size: 16px;
+}
+.photographerofthemonth .banner_content_ a{
+  display: block;
+  width: fit-content;
+  background-color: #ee7512;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.photographerofthemonth .banner_content_ a:hover{
+  transform: scale(1.1);
+}
+/* font families  */
+  /* font-family: "AquaWax Light";
+font-weight: 300; */
+  /* font-family: "AquaWax Med";
+font-weight: 500; */
+  /* font-family: "AquaWax black";
+font-weight: 900; */
+  /* font-family: "segoe"; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Montserrat', sans-serif; */
 
 
 

@@ -16,7 +16,7 @@ body {
     <div class="wishlist_filter">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-11 col-12">
+                <div class="col-lg-9 col-md-11 col-sm-12 col-12">
                     <ul class="breadcrumps_custom">
                         <li><a href="javavoid:;">Home </a></li>
                         <li><a href="javavoid:;">Shop</a></li>
@@ -30,7 +30,7 @@ body {
     <section class="">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-11 col-12">
+                <div class="col-lg-9 col-md-11 col-sm-12 col-12">
                     <div class="wishlist_table">
                         <div data-aos-duration="700" data-aos="fade-up" data-aos-delay="0">
                             <table class="table">
@@ -38,8 +38,8 @@ body {
                                     <tr>
                                         <th scope="col">PRODUCT</th>
                                         <th scope="col">DESCRIPTION</th>
-                                        <th scope="col">UNIT PRICE</th>
-                                        <th scope="col">SUB TOTAL</th>
+                                        <!-- <th scope="col">UNIT PRICE</th>
+                                        <th scope="col">SUB TOTAL</th> -->
                                         <th scope="col">ACTION</th>
 
                                     </tr>
@@ -55,11 +55,8 @@ body {
                                             <h4>Product code:<span>WA16Z</span></h4>
                                         </td>
                                         <td data-aos-duration="800" data-aos="zoom-in-down" data-aos-delay="100">
-                                            $75</td>
-                                        <td data-aos-duration="800" data-aos="zoom-in-down" data-aos-delay="100">
-                                            $75</td>
-                                        <td data-aos-duration="800" data-aos="zoom-in-down" data-aos-delay="100">
                                             <a href="javascript:;"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="javascript:;"><i class="fad fa-shopping-cart"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -72,11 +69,8 @@ body {
                                             <h4>Product code:<span>WA16Z</span></h4>
                                         </td>
                                         <td data-aos-duration="1000" data-aos="zoom-in-down" data-aos-delay="100">
-                                            $75</td>
-                                        <td data-aos-duration="1000" data-aos="zoom-in-down" data-aos-delay="100">
-                                            $75</td>
-                                        <td data-aos-duration="1000" data-aos="zoom-in-down" data-aos-delay="100">
                                             <a href="javascript:;"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="javascript:;"><i class="fad fa-shopping-cart"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -85,51 +79,11 @@ body {
                                 <div class="left_btn" data-aos-duration="800" data-aos="fade-left"
                                     data-aos-delay="100">
                                     <button>continue shopping</button>
-                                    <button>Edit this image</button>
                                 </div>
                                 <div class="right_btn" data-aos-duration="800" data-aos="fade-left"
                                     data-aos-delay="100">
-                                    <button>clear cart</button>
-                                    <button>Create Collection</button>
                                 </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cuppon_cards">
-                        <div class="row">
-                            <div class="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
-                                <div class="card">
-                                    <div class="card_body" data-aos-duration="800" data-aos="fade-right"
-                                        data-aos-delay="100">
-                                        <h3>APPLY COUPON CODE HERE</h3>
-                                        <div class="form-group">
-                                            <p>Enter your coupon code</p>
-                                            <input type="text">
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="applycodebutton">
-                                                <button>apply code</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4">
-                                <div class="card">
-                                    <div class="card_body" data-aos-duration="800" data-aos="fade-left"
-                                        data-aos-delay="100">
-                                        <h3>SUB TOTAL <span>$150</span></h3>
-                                        <h5>GRAND TOTAL <span>$150</span></h5>
-                                        <div class="proceed-button">
-                                            <button onclick="location.href='checkout.php'">PROCEED TO
-                                                CHECKOUT</button>
-                                        </div>
-                                        <div class="lastcard">
-                                            <p>Checkout with multiple addresses</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

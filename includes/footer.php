@@ -49,7 +49,7 @@
                     <div class="row justify-content-between">
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="footer_logo"><a href="index.php"><img class="img-fluid"
-                                        src="images/footer_logo.png" alt=""></a></div>
+                                        src="images/logo.png" alt=""></a></div>
                             <p>Placeholder Text Is The Label For Possible Content In A Text Box. It Can Normally Be
                                 Found Placeholder Text.</p>
                             <ul class="social_icon">
@@ -112,6 +112,7 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="slick/slick.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <!-- <script src="js/wow.min.js"></script> -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/masonry.js"></script>
