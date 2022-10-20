@@ -154,7 +154,7 @@
 
             //if CORS is not enabled we will need to use php to fetch
             //the image at given url and then return its data in base64
-            var request = _pixie.ajax(_pixie.getPath()+'launderer.php', 'url='+_pixie.absoluteUrl(url));
+            var request = _pixie.ajax(_pixie.getPath()+'launderer.html', 'url='+_pixie.absoluteUrl(url));
 
             request.onload = function(e) {
                 if (e.target.status >= 200 && e.target.status < 400) {

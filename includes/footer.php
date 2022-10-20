@@ -48,7 +48,7 @@
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                            <div class="footer_logo"><a href="index.php"><img class="img-fluid"
+                            <div class="footer_logo"><a href="index.html"><img class="img-fluid"
                                         src="images/logo.png" alt=""></a></div>
                             <p>Placeholder Text Is The Label For Possible Content In A Text Box. It Can Normally Be
                                 Found Placeholder Text.</p>
@@ -64,10 +64,10 @@
                                     <div class="footer_links">
                                         <h5>Usefull Links</h5>
                                         <ul>
-                                            <li><a href="index.php">Home</a></li>
-                                            <li><a href="digital_library.php">Digital Library </a></li>
-                                            <li><a href="art_gallery.php">Art Gallery</a></li>
-                                            <li><a href="stock_images.php">Stock Images</a></li>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="digital_library.html">Digital Library </a></li>
+                                            <li><a href="art_gallery.html">Art Gallery</a></li>
+                                            <li><a href="stock_images.html">Stock Images</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -76,8 +76,8 @@
                                         <ul>
                                             <li><a href="javascript:;">Privacy Policy</a></li>
                                             <li><a href="javascript:;">Why?</a></li>
-                                            <li><a href="about_us.php">About Us</a></li>
-                                            <li><a href="contact_us.php">Contact Us</a></li>
+                                            <li><a href="about_us.html">About Us</a></li>
+                                            <li><a href="contact_us.html">Contact Us</a></li>
                                         </ul>
                                     </div>
                                 </div>
